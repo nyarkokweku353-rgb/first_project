@@ -1,0 +1,9 @@
+# 1. Create a fresh, local virtual environment
+python -m venv .venv
+
+# 2. Activate it and install dependencies (once you generate a requirements file)
+source .venv/Scripts/activate
+pip install -r requirements.txt
+
+# 3. Spin up the app (FastAPI will automatically generate a fresh local .db file)
+fastapi dev main.py
