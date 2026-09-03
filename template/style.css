@@ -1,0 +1,53 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('wallpaper2you_135935.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.signup-container{
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-image: url('OIP.webp');
+    background-size: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+input{
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #221c01;
+    border-radius: 30px;
+}
+
+button{
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #0056b3;
+}
