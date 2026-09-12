@@ -1,6 +1,5 @@
 body{
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     background-image: url('wallpaper2you_135935.jpg');
     background-size: cover;
     margin: 0;
@@ -27,11 +26,6 @@ form{
     flex-direction: column;
 }
 
-label{
-    margin-bottom: 15px;
-    color: #fff;
-}
-
 input{
     padding: 10px;
     margin-bottom: 20px;
@@ -50,4 +44,8 @@ button{
 
 button:hover{
     background-color: #0056b3;
+}
+
+p{
+    color: #fff;
 }
