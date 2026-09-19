@@ -35,7 +35,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest
-      - run: PYTHONPATH=. pytest src/integration_tests
+      - run: pytest src/integration_tests
 
   lint:
     runs-on: ubuntu-latest
