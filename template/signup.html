@@ -8,6 +8,9 @@
 </head>
 <body>
     <div class="signup-container">
+    {% if user %}
+        <p>User created: {{ user.email }}</p>
+    {% endif %}
         <h1>Signup Form</h1>
         <form action="" method="post">
             <input type="email" name="email" placeholder="email..."><br>
