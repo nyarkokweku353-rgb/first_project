@@ -12,15 +12,15 @@ app.mount("/static", StaticFiles(directory="template"), name="static")
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-@ app.get("/signup", response_class=HTMLResponse)
+
+@app.get("/signup", response_class=HTMLResponse)
 def get_signup_page(request: Request):
     return templates.TemplateResponse("signup.html", {"request": request})
 
-@ app.post("/signup")
-def create_user(request: Request,
-                 email: str = Form(...), 
-                 password: str = Form(...), 
-                 db: Session = Depends(get_db)):
+
+@app.post("/signup")
+def create_user(request: Request, email: str = Form(...), 
+                 password: str = Form(...), db: Session = Depends(get_db)):
     hashed_password = pwd_context.hash(password)
 
     existing_user = db.query(User).filter(User.email == email).first()
