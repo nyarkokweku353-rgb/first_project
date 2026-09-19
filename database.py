@@ -6,6 +6,7 @@ engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 Base = declarative_base()
 Session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+
 class User(Base):
     __tablename__ = "users"
 
@@ -13,7 +14,9 @@ class User(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     hash_password = Column(String, nullable=False)
 
+
 Base.metadata.create_all(bind=engine)
+
 
 def get_db():
     db = Session()
