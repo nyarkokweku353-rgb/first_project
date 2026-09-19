@@ -19,8 +19,8 @@ def get_signup_page(request: Request):
 
 
 @app.post("/signup")
-def create_user(request: Request, email: str = Form(...), password: str = Form(...),
-                db: Session = Depends(get_db)):
+def create_user(request: Request, email: str = Form(...),
+                password: str = Form(...), db: Session = Depends(get_db)):
     hashed_password = pwd_context.hash(password)
 
     existing_user = db.query(User).filter(User.email == email).first()
@@ -32,7 +32,8 @@ def create_user(request: Request, email: str = Form(...), password: str = Form(.
     db.commit()
     db.refresh(new_user)
 
-    return templates.TemplateResponse("signup.html", {"request": request, "user": new_user})
+    return templates.TemplateResponse("signup.html", {"request": request,
+                                                      "user": new_user})
 
 # from fastapi.staticfiles import StaticFiles
 # app.mount("/static", StaticFiles(directory="static"), name="static")
