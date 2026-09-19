@@ -35,7 +35,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest
-      - run: pytest src/integration_tests
+      - run: PYTHONPATH=. pytest src/integration_tests
 
   lint:
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8
       - run: flake8 main.py
-      - run: flake8 database.py
+      - run: flake8 src/database.py
 
   security-scan:
     runs-on: ubuntu-latest
