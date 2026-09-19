@@ -19,14 +19,12 @@ def get_signup_page(request: Request):
 
 
 @app.post("/signup")
-def create_user(request: Request, email: str = Form(...), 
-                 password: str = Form(...), db: Session = Depends(get_db)):
+def create_user(request: Request, email: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)):
     hashed_password = pwd_context.hash(password)
 
     existing_user = db.query(User).filter(User.email == email).first()
     if existing_user:
-        raise HTTPException(status_code=400,
-                             detail="Email already registered")
+        raise HTTPException(status_code=400, detail="Email already registered")
 
     new_user = User(email=email, hash_password=hashed_password)
     db.add(new_user)
