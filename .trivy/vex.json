@@ -1,0 +1,32 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "CVE-2026-63374",
+      "package": "anyio",
+      "installed_version": "4.12.1",
+      "status": "not_affected",
+      "justification": "Our project runs on Python 3.9, which does not expose the vulnerable TLSStream IDNA 2003 path. The CVE is not exploitable in our environment."
+    },
+    {
+      "id": "CVE-2026-24486",
+      "package": "python-multipart",
+      "installed_version": "0.0.20",
+      "status": "not_affected",
+      "justification": "We do not accept untrusted file uploads. Arbitrary file write via path traversal is not exploitable in our deployment."
+    },
+    {
+      "id": "CVE-2026-42561",
+      "package": "python-multipart",
+      "installed_version": "0.0.20",
+      "status": "not_affected",
+      "justification": "Multipart headers are bounded by FastAPI’s request size limits. DoS via excessive headers is not exploitable."
+    },
+    {
+      "id": "CVE-2026-48818",
+      "package": "starlette",
+      "installed_version": "0.49.3",
+      "status": "fixed",
+      "justification": "Upgraded to patched version."
+    }
+  ]
+}
