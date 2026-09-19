@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Form, HTTPException, Request, Depends
 from fastapi.templating import Jinja2Templates
-from database import User, get_db
+from src.database import User, get_db
 from sqlalchemy.orm import Session
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
