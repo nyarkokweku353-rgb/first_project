@@ -32,7 +32,7 @@ def create_user(request: Request, email: str = Form(...),
     db.commit()
     db.refresh(new_user)
 
-    return templates.TemplateResponse(request, "signup.html", 
+    return templates.TemplateResponse(request, "signup.html",
                                       {"user": new_user})
 
 # from fastapi.staticfiles import StaticFiles
