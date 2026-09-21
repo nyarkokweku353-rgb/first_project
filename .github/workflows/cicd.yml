@@ -141,4 +141,4 @@ jobs:
           version: 'latest'
       - name: Update Kubernetes deployment image
         run: |
-          kubectl set image deployment/fast-api-deployment fast-api=ghcr.io/${{ github.repository }}/fast-api-image:latest --record
+          kubectl set image deployment/fast-api-deployment fast-api=ghcr.io/${{ github.repository_owner }}/fast-api-image:latest --record
