@@ -10,7 +10,8 @@ RUN pip install --no-cache-dir --upgrade --force-reinstall \
 FROM python:3.11-slim
 WORKDIR /app
 RUN useradd -m myuser
-RUN rm -rf /usr/local/lib/python3.11/site-packages/setuptools/_vendor/*
+RUN rm -rf /usr/local/lib/python3.11/site-packages/setuptools/_vendor/* \
+    && rm -rf /usr/local/lib/python3.11/site-packages/*.dist-info
 COPY --chown=myuser:myuser --from=builder /usr/local /usr/local
 COPY --chown=myuser:myuser . .
 USER myuser
