@@ -89,7 +89,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./docker/Dockerfile
+          file: Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/fast-api-image:latest
 
