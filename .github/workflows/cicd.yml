@@ -116,7 +116,7 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           vuln-type: 'os,library'
-          image-ref: ghcr.io/${{ github.repository }}/fast-api-image:latest
+          image-ref: ghcr.io/${{ github.repository_owner }}/fast-api-image:latest
           severity: 'CRITICAL,HIGH'
           format: 'table'
           exit-code: '1'
