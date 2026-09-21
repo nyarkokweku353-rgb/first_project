@@ -15,7 +15,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 @app.get("/signup", response_class=HTMLResponse)
 def get_signup_page(request: Request):
-    return templates.TemplateResponse("signup.html", {"request": request})
+    return templates.TemplateResponse("signup.html", request)
 
 
 @app.post("/signup")
@@ -32,8 +32,7 @@ def create_user(request: Request, email: str = Form(...),
     db.commit()
     db.refresh(new_user)
 
-    return templates.TemplateResponse("signup.html", {"request": request,
-                                                      "user": new_user})
+    return templates.TemplateResponse(request, "signup.html", {"user": new_user})
 
 # from fastapi.staticfiles import StaticFiles
 # app.mount("/static", StaticFiles(directory="static"), name="static")
